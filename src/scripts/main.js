@@ -1,18 +1,17 @@
 'use strict';
 
 // write code here
-const arrInput = document.querySelectorAll('input');
+const arrInput = document.querySelectorAll('form input');
 
 arrInput.forEach((input) => {
   const divEl = input.parentElement;
   const labelEl = document.createElement('label');
-  const inputEl = divEl.querySelector('input');
   const nameInput = input.getAttribute('name');
 
-  divEl.insertBefore(labelEl, inputEl);
+  divEl.insertBefore(labelEl, input);
   labelEl.className = 'field-label';
-  labelEl.setAttribute('for', inputEl.getAttribute('id'));
+  labelEl.setAttribute('for', input.getAttribute('id'));
   labelEl.textContent = nameInput;
 
-  inputEl.placeholder = nameInput.charAt(0).toUpperCase() + nameInput.slice(1);
+  input.placeholder = nameInput.charAt(0).toUpperCase() + nameInput.slice(1);
 });
