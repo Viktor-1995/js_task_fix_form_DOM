@@ -6,7 +6,7 @@ const arrInput = document.querySelectorAll('form input');
 arrInput.forEach((input) => {
   const divEl = input.parentElement;
   const labelEl = document.createElement('label');
-  const nameInput = input.getAttribute('name');
+  const nameInput = input.getAttribute('name').replace(/([A-Z])/g, ' $1');
 
   divEl.insertBefore(labelEl, input);
   labelEl.className = 'field-label';
